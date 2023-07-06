@@ -61,3 +61,27 @@ multiTypes = 10;
 multiTypes = "multi";
 multiTypes = true;
 console.log(multiTypes);
+// types in functions
+function add(num1, num2) {
+    return num1 + num2;
+}
+console.log("add fn", add(2, 3));
+// passing optional parameter
+function optionalParameter(op1, op2) {
+    if (op2) {
+        return op1 * op2;
+    }
+    else
+        return op1;
+}
+console.log("op fn", optionalParameter(2));
+// passing default parameter
+function defaultParameter(dp1, dp2) {
+    if (dp2 === void 0) { dp2 = 10; }
+    if (dp2) {
+        return dp1 * dp2;
+    }
+    else
+        return dp1;
+}
+console.log("dp fn", defaultParameter(5));
