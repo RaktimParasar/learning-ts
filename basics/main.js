@@ -85,3 +85,31 @@ function defaultParameter(dp1, dp2) {
         return dp1;
 }
 console.log("dp fn", defaultParameter(5));
+function fullName(person) {
+    console.log("".concat(person.firstName, " ").concat(person.lastName));
+}
+var p = {
+    firstName: "Bruce",
+    lastName: "Wayne",
+};
+fullName(p);
+var myDog = {
+    name: "Buddy",
+    breed: "Lab",
+    makeSound: function () {
+        console.log("Woof!");
+    },
+};
+var myCat = {
+    name: "Miui",
+    breed: "something",
+    makeSound: function () {
+        console.log("Meewww!");
+    },
+};
+var user = {
+    name: "Jhon",
+    age: 30,
+};
+var interfaceDemoAdd = function (x, y) { return x + y; };
+var typeDemoAdd = function (x, y) { return x + y; };

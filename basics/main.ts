@@ -95,3 +95,72 @@ function defaultParameter(dp1: number, dp2: number = 10) {
   } else return dp1;
 }
 console.log("dp fn", defaultParameter(5));
+
+// interface & type
+interface Person {
+  firstName: string;
+  lastName?: string;
+}
+function fullName(person: Person) {
+  console.log(`${person.firstName} ${person.lastName}`);
+}
+let p = {
+  firstName: "Bruce",
+  lastName: "Wayne",
+};
+fullName(p);
+
+interface Animal {
+  name: string;
+  makeSound(): void;
+}
+
+interface Dog extends Animal {
+  breed: string;
+}
+
+const myDog: Dog = {
+  name: "Buddy",
+  breed: "Lab",
+  makeSound() {
+    console.log("Woof!");
+  },
+};
+
+type Pet = {
+  name: string;
+  makeSound(): void;
+};
+
+type Cat = Pet & {
+  breed: string;
+};
+
+const myCat: Cat = {
+  name: "Miui",
+  breed: "something",
+  makeSound() {
+    console.log("Meewww!");
+  },
+};
+
+interface User {
+  name: string;
+}
+
+interface User {
+  age: number;
+}
+
+const user: User = {
+  name: "Jhon",
+  age: 30,
+};
+
+interface MathOpsInterface {
+  (x: number, y: number): number;
+}
+const interfaceDemoAdd: MathOpsInterface = (x, y) => x + y;
+
+type MathOpstype = (x: number, y: number) => number;
+const typeDemoAdd: MathOpstype = (x, y) => x + y;
