@@ -164,3 +164,32 @@ const interfaceDemoAdd: MathOpsInterface = (x, y) => x + y;
 
 type MathOpstype = (x: number, y: number) => number;
 const typeDemoAdd: MathOpstype = (x, y) => x + y;
+
+// class & access modifiers
+class Employee {
+  employeeName: string;
+  constructor(name: string) {
+    this.employeeName = name;
+  }
+  greet() {
+    console.log(`Hello ${this.employeeName}`);
+  }
+}
+
+let emp1 = new Employee("Raktim");
+console.log("emp1", emp1.employeeName);
+emp1.greet();
+
+class Manager extends Employee {
+  constructor(managerName: string) {
+    super(managerName);
+  }
+  delegateWork() {
+    console.log(`Manager delegating tasks ${this.employeeName}`);
+  }
+}
+
+let manager1 = new Manager("Bruce");
+console.log("manager1", manager1.employeeName);
+manager1.delegateWork();
+manager1.greet();

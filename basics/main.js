@@ -1,4 +1,19 @@
 "use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 Object.defineProperty(exports, "__esModule", { value: true });
 var digit = 10;
 console.log(digit);
@@ -113,3 +128,30 @@ var user = {
 };
 var interfaceDemoAdd = function (x, y) { return x + y; };
 var typeDemoAdd = function (x, y) { return x + y; };
+// class & access modifiers
+var Employee = /** @class */ (function () {
+    function Employee(name) {
+        this.employeeName = name;
+    }
+    Employee.prototype.greet = function () {
+        console.log("Hello ".concat(this.employeeName));
+    };
+    return Employee;
+}());
+var emp1 = new Employee("Raktim");
+console.log("emp1", emp1.employeeName);
+emp1.greet();
+var Manager = /** @class */ (function (_super) {
+    __extends(Manager, _super);
+    function Manager(managerName) {
+        return _super.call(this, managerName) || this;
+    }
+    Manager.prototype.delegateWork = function () {
+        console.log("Manager delegating tasks ".concat(this.employeeName));
+    };
+    return Manager;
+}(Employee));
+var manager1 = new Manager("Bruce");
+console.log("manager1", manager1.employeeName);
+manager1.delegateWork();
+manager1.greet();
