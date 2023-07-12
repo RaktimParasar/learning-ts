@@ -1,7 +1,10 @@
 import { Greet } from "./components/Greet";
-import "./App.css";
 import { Person } from "./components/Person";
 import { PersonList } from "./components/PersonList";
+import { Status } from "./components/Status";
+import { Heading } from "./components/Heading";
+import { Oscar } from "./components/Oscar";
+import "./App.css";
 
 const PERSON_NAME = {
   first: "Bruce",
@@ -20,6 +23,10 @@ function App() {
       <Greet name="Raktim" messageCount={10} isLoggedIn={true} />
       <Person name={PERSON_NAME} />
       <PersonList names={PERSON_LIST} />
+      <Status status="success" />
+      <Oscar>
+        <Heading>Passing a children prop</Heading>
+      </Oscar>
     </>
   );
 }
