@@ -9,7 +9,7 @@ export const PersonList = (props: PersonListProps) => {
   return (
     <>
       {props.names.map((name) => (
-        <div>
+        <div key={name.first}>
           {name.first} {name.last}
         </div>
       ))}

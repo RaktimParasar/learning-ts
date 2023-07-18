@@ -5,6 +5,8 @@ import { Status } from "./components/Status";
 import { Heading } from "./components/Heading";
 import { Oscar } from "./components/Oscar";
 import "./App.css";
+import { Button } from "./components/Button";
+import { Input } from "./components/Input";
 
 const PERSON_NAME = {
   first: "Bruce",
@@ -27,6 +29,14 @@ function App() {
       <Oscar>
         <Heading>Passing a children prop</Heading>
       </Oscar>
+      <Button
+        handleClick={(event, id) => {
+          console.log("Button Clicked");
+          console.log("Event", event);
+          console.log("ID", id);
+        }}
+      />
+      <Input value="" handleInputChange={(e) => console.log("event", e)} />
     </>
   );
 }
