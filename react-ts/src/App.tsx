@@ -4,9 +4,15 @@ import { PersonList } from "./components/PersonList";
 import { Status } from "./components/Status";
 import { Heading } from "./components/Heading";
 import { Oscar } from "./components/Oscar";
-import "./App.css";
 import { Button } from "./components/Button";
 import { Input } from "./components/Input";
+
+import "./App.css";
+import { InlineStyles } from "./components/InlineStyles";
+import { Users } from "./components/state/Users";
+import { Counter } from "./components/state/Counter";
+import { Box } from "./components/context/Box";
+import { ThemeContextProvider } from "./components/context/ThemeContext";
 
 const PERSON_NAME = {
   first: "Bruce",
@@ -37,6 +43,14 @@ function App() {
         }}
       />
       <Input value="" handleInputChange={(e) => console.log("event", e)} />
+      <InlineStyles
+        styles={{ border: "2px solid white", padding: "1rem", color: "wheat" }}
+      />
+      <Users />
+      <Counter />
+      <ThemeContextProvider>
+        <Box />
+      </ThemeContextProvider>
     </>
   );
 }
