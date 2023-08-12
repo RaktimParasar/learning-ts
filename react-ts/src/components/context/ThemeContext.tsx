@@ -7,8 +7,6 @@ type ThemeContextProviderProps = {
 
 export const ThemeContext = createContext(theme);
 
-console.log(ThemeContext, ThemeContext);
-
 export const ThemeContextProvider = ({
   children,
 }: ThemeContextProviderProps) => {

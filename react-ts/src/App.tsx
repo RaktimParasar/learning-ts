@@ -13,6 +13,14 @@ import { Users } from "./components/state/Users";
 import { Counter } from "./components/state/Counter";
 import { Box } from "./components/context/Box";
 import { ThemeContextProvider } from "./components/context/ThemeContext";
+import { UserContextProvider } from "./components/context/UserContext";
+import { User } from "./components/context/User";
+import { DomRef } from "./components/ref/DomRef";
+import { MutableRef } from "./components/ref/MutableRef";
+import { Private } from "./components/auth/Private";
+import { Profile } from "./components/auth/Profile";
+import { List } from "./components/generics/List";
+import { RandomNumber } from "./components/RandomNumber";
 
 const PERSON_NAME = {
   first: "Bruce",
@@ -51,6 +59,25 @@ function App() {
       <ThemeContextProvider>
         <Box />
       </ThemeContextProvider>
+      <UserContextProvider>
+        <User />
+      </UserContextProvider>
+      <DomRef />
+      <MutableRef />
+      <Private isLoggedIn={true} component={Profile} />
+      {/* <List items={["A", "B", "C"]} onClick={(item) => console.log(item)} /> */}
+      {/* <List items={[1, 2, 3]} onClick={(item) => console.log(item)} /> */}
+      <List
+        items={[
+          {
+            id: 1,
+            one: "one",
+            two: "two",
+          },
+        ]}
+        onClick={(item) => console.log(item)}
+      />
+      <RandomNumber value={2} isPositive />
     </>
   );
 }
