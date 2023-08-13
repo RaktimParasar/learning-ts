@@ -21,6 +21,10 @@ import { Private } from "./components/auth/Private";
 import { Profile } from "./components/auth/Profile";
 import { List } from "./components/generics/List";
 import { RandomNumber } from "./components/RandomNumber";
+import { TemplateLiterals } from "./components/TemplateLiterals";
+import { CustomButton } from "./components/CustomButton";
+import { CustomInput } from "./components/CustomInput";
+import { Text } from "./components/polymorphic/Text";
 
 const PERSON_NAME = {
   first: "Bruce",
@@ -78,6 +82,26 @@ function App() {
         onClick={(item) => console.log(item)}
       />
       <RandomNumber value={2} isPositive />
+      <TemplateLiterals position="center" />
+      <CustomButton variant="primary" onClick={() => console.log("primary")}>
+        Primary
+      </CustomButton>
+      <CustomButton
+        variant="secondary"
+        onClick={() => console.log("secondary")}
+      >
+        Secondary
+      </CustomButton>
+      <CustomInput onChange={() => console.log("Hello")} />
+      <Text as="h1" size="lg" color="primary">
+        Heading
+      </Text>
+      <Text as="p" size="md" color="primary">
+        Paragraph
+      </Text>
+      <Text as="label" htmlFor="id" size="sm" color="secondary">
+        Label
+      </Text>
     </>
   );
 }
